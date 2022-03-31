@@ -1,2 +1,2 @@
 #!/bin/bash
-find -type d | xargs chmod -R 755
+find . -type d | xargs chmod -R 755
