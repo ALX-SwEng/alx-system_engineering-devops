@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f 
+find . -type f -exec ls -1aSF --color {} +
