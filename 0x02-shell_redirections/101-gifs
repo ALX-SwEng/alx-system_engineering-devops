@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" | ls -alSr
+find . -type f -exec ls -lSF --color {} +
