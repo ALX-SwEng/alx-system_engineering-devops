@@ -1,2 +1,2 @@
 #!/bin/bash
-read data | tr
+tr
