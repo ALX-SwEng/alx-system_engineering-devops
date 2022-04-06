@@ -1,2 +1,2 @@
 #!/bin/bash
-tr 'a-zA-Z' 'n-za-mN-ZA-M'
+printf "%o\n" $(($# 'echo $water | tr 'water' '01234' + 'echo $stir | tr 'stir' '01234')) | tr
