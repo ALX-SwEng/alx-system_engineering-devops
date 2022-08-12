@@ -1,0 +1,84 @@
+https://cmdchallenge.com
+
+#1 Print “Hello World”.
+Ans: echo "hello world"
+
+#2 Print the current working directory.
+Ans: pwd
+
+#3 List names of all the files in the current directory,one file per line.
+Ans: ls
+
+#4 There is a file named “access.log” in the current directory. Print the contents.
+Ans: cat access.log
+
+#5 Print the last 5 lines of “access.log”.
+Ans: tail -5 access.log
+
+#6 Create an empty file named take-the-command-challenge in the current working directory.
+Ans: touch take-the-command-challenge
+
+#7 Create a directory named tmp/files in the current working directory
+Hint: The directory "tmp/" doesn't exist, with one command you need to create both "tmp/" and "tmp/files"
+Ans: mkdir -p tmp/files
+
+#8 Copy the file named take-the-command-challenge to the directory tmp/files
+Ans: cp take-the-command-challenge tmp/files
+
+#9 Move the file named take-the-command-challenge to the directory tmp/files
+Ans: mv take-the-command-challenge tmp/files
+
+#10 Create a symbolic link named take-the-command-challenge that points to the file tmp/files/take-the-command-challenge.
+Ans: ln -s tmp/files/take-the-command-challenge take-the-command-challenge 
+
+#11 Delete all of the files in this challenge directory including all subdirectories and their contents.
+Hint: There are files and directories that start with a dot ".", "rm -rf *" won't work here!
+Ans: rm --r .* *
+
+#12 There are files in this challenge with different file extensions. Remove all files with the .doc extension recursively in the current working directory.
+Ans: rm -r **/*doc*
+
+#13 There is a file named “access.log” in the current working directory. Print all lines in this file that contains the string “GET”.
+Ans: grep GET* access.log
+
+#14 Print all files in the current directory, one per line (not the path, just the filename) that contain the string “500”.
+Ans: grep -l 500 *
+
+#15 Print the relative file paths, one path per line for all filenames that start with “access.log” in the current directory.
+Ans: find . -name access.log*
+
+#16 Search for strings in files recursive
+Ans: grep -rh 500 */
+
+#17 Extract all IP addreses from files that start with “access.log” printing one IP address per line.
+Ans: grep -ohr ^[*-9]*
+
+#18 Count the number of files in the current working directory. Print the number of files as a single integer.
+Ans: ls -lr | wc -l
+
+#19 Print the contents of access.log sorted.
+Ans: cat access.log | sort
+
+#20 Print the number of lines n access.log that contain the string “GET”.
+Ans: grep -c G access.log
+
+#21 The file split-me.txt contains a list of numbers separated by a ‘;’ character.Split the numbers on the ‘;’ character,one number per line.
+Ans: cat split-me* | bc
+
+#22 Print the numbers 1 to 100 separated by spaces.
+Ans: echo {1..100}
+
+#23 This challenge has text files (with a .txt extension) that contain the phrase “challenges are difficult”. Delete this phrase recursively from all text files.Note that some files are in subdirectories so you will need to search for them.
+Ans: sed -ir "chal*" **/*.txt
+
+#24 The file sum-me.txt has a list of numbers,one per line. Print the sum of these numbers.
+Ans: cat sum-me.txt |jq -s add
+
+#25 Print all files in the current directory recursively without the leading directory path.
+Ans: ls -R|grep [a-z]
+
+#26 Rename all files removing the extension from them in the current directory recursively.
+Ans: rm -rf **
+
+#27 The files in this challenge contain spaces. List all of the files (filenames only) in the current directory but replace all spaces with a ‘.’ character.
+Ans: ls -p | tr " " "."
