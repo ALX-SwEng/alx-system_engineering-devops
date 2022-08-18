@@ -21,8 +21,7 @@ Resources
 
 **Read or watch**:
 
--   [Loops sample](https://alx-intranet.hbtn.io/rltoken/wT98UJfv_E2tk4yP9PcLLw "The <code>for</code> loop" target="_blank">The <code>for</code> loop</a> </li>
-    <li><a href=")
+-   [Loops sample](https://alx-intranet.hbtn.io/rltoken/wT98UJfv_E2tk4yP9PcLLw "The <code>for</code> loop")
 -   [Variable assignment and arithmetic](https://alx-intranet.hbtn.io/rltoken/olvOKX699pq50rkHRE5cSA "Variable assignment and arithmetic")
 -   [Comparison operators](https://alx-intranet.hbtn.io/rltoken/HxohzllkOWh0t4dy_HptIQ "Comparison operators")
 -   [File test operators](https://alx-intranet.hbtn.io/rltoken/g8of2ABPEJfCNtPrDQaqVw "File test operators")
