@@ -59,30 +59,23 @@ Requirements
 Quiz questions
 --------------
 
-Question #0
+##### Question #0:
 What is the /school/ regexp matching?
+ - [] schoOl
+ - [] School
+ - [x] school
 
-[] schoOl
-[] School
-[x] school
-
-Question #1
+##### Question #1:
 What is the /Scho.l/ regexp matching?
+ - [] Scho.l
+ - [] School
+ - [] school
 
-[x] Scho.l
-
-[x] School
-
-[] school
-
-Question #2
+##### Question #2
 What is the /Scho*l/ regexp matching?
-
-[x] Schoool
-
-[] Scho.l
-
-[] Schoo.l
+ - [] Schoool
+ - [] Scho.l
+ - [] Schoo.l
 
 Tasks
 -----
