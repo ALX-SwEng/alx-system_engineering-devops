@@ -65,12 +65,12 @@ Quiz questions
  - [x] school
 
 ##### Question #1: What is the /Scho.l/ regexp matching?
- - [] Scho.l
- - [] School
+ - [x] Scho.l
+ - [x] School
  - [] school
 
 ##### Question #2: What is the /Scho*l/ regexp matching?
- - [] Schoool
+ - [x] Schoool
  - [] Scho.l
  - [] Schoo.l
 
