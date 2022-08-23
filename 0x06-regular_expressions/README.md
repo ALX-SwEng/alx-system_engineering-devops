@@ -80,7 +80,6 @@ Tasks
 ### 0\. Simply matching School [mandatory]
 
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/ec65557f0da1fbfbff6659413885e4d4822f5b1d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220119%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220119T114201Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d60b194ab54786a298d7c69d1f64f9c7927ba9cb4c0282f38c48abfd5617e338)
-
 Requirements:
 -   The regular expression must match `School`
 -   Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
