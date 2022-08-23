@@ -70,14 +70,18 @@ Question #1
 What is the /Scho.l/ regexp matching?
 
 [x] Scho.l
+
 [x] School
+
 [] school
 
 Question #2
 What is the /Scho*l/ regexp matching?
 
 [x] Schoool
+
 [] Scho.l
+
 [] Schoo.l
 
 Tasks
