@@ -55,7 +55,16 @@ Requirements
 Quiz questions
 --------------
 
-Show
+Question #0: What is localhost?
+- [] A hostname that means this IP
+- [x] A hostname that means this computer
+- [] An IP attached to a computer
+
+Question #1: What is 0.0.0.0?
+- [x] All IPv4 addresses on the local machine
+- [] All the IPs
+- [] It means null in networking
+
 
 Tasks
 -----
