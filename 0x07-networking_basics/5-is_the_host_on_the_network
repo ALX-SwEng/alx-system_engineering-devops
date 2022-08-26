@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Accept a string as an argument and pings an IP address received as an argument 5 times.
-# Displays Usage: 5-is_the_host_on_the_network {IP_ADDRESS} if no argument passed
+# Accept a string as an argument and pings an IP address received as an argument 5 times and Displays Usage: 5-is_the_host_on_the_network {IP_ADDRESS} if no argument passed
 
 if [ $# -eq 0 ]
 then
