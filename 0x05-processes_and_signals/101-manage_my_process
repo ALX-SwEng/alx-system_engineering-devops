@@ -17,22 +17,24 @@
 #   If any other or no arguments are passed, displays
 #+  "Usage: manage_my_process {start|stop|restart}"
 
-path=/var/run/my_process.pid
-
-if [ "$1" = "start" ];then
-    ./manage_my_process &
-    echo "$$" > $path
-    echo "manage_my_process started"
-elif [ "$1" = "stop" ];then
-    pkill -f ./manage_my_process
-    rm $path
-    echo 'manage_my_process stopped'
-elif [ "$1" = "restart" ];then
-     pkill -f ./manage_my_process
-     rm $path
-     ./manage_my_process &
-     echo "$$" > $path
-     echo "manage_my_process restarted"
+filename='/var/run/process.pid'
+if [ "$1" == "start" ]
+then
+	./manage_my_process &
+	echo "$$" >> $filename
+	echo "manage_my_process started"
+elif [ "$1" == "stop" ]
+then
+	kill -2 "$(pgrep -f "manage_my_process")"
+	rm $filename
+	echo "manage_my_process stopped"
+elif [ "$1" == "restart" ]
+then
+	kill -2 "$(pgrep -f "manage_my_process")"
+	rm $filename
+	./manage_my_process &
+	echo "$$" > $filename
+	echo "manage_my_process restarted"
 else
-    echo "Usage: manage_my_process {start|stop|restart}"
+	echo "Usage: manage_my_process {start|stop|restart}"
 fi
