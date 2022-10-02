@@ -27,13 +27,15 @@ elif [ "$1" == "stop" ]
 then
 	kill -2 "$(pgrep -f "manage_my_process")"
 	rm $filename
+	./manage_my_process &
+	echo "$$" > $filename
 	echo "manage_my_process stopped"
 elif [ "$1" == "restart" ]
 then
 	kill -2 "$(pgrep -f "manage_my_process")"
 	rm $filename
 	./manage_my_process &
-	echo "$$" > $filename
+  	echo $$ > filename
 	echo "manage_my_process restarted"
 else
 	echo "Usage: manage_my_process {start|stop|restart}"
