@@ -17,7 +17,7 @@
 #   If any other or no arguments are passed, displays
 #+  "Usage: manage_my_process {start|stop|restart}"
 
-filename='/var/run/process.pid'
+filename ='/var/run/process.pid'
 if [ "$1" == "start" ]
 then
 	./manage_my_process &
@@ -26,6 +26,7 @@ then
 elif [ "$1" == "stop" ]
 then
 	kill -2 "$(pgrep -f "manage_my_process")"
+	echo "$$" >> $filename
 	rm $filename
 	echo "manage_my_process stopped"
 elif [ "$1" == "restart" ]
