@@ -17,24 +17,33 @@
 #   If any other or no arguments are passed, displays
 #+  "Usage: manage_my_process {start|stop|restart}"
 
+PIDFILE=/var/run/my_process.pid
 
-if [ "$1" = "start" ]
-then
+start() {
     ./manage_my_process &
-    echo $! >> /var/run/my_process.pid
-    echo "manage_my_process started"
-elif [ "$1" = "stop" ]
-then
-    xargs kill < "/var/run/my_process.pid"
-    rm ./my_process.pid
-    echo "manage_my_process stopped"
-elif [ "$1" = "restart" ]
-then
-    xargs kill < "/var/run/my_process.pid"
-    rm /var/run/my_process.pid
-    ./manage_my_process &
-    echo $! >> /var/run/my_process.pid
-    echo "manage_my_process restarted"
-else
-    echo "Usage: manage_my_process {start|stop|restart}"
-fi
+    echo "$!" > "$PIDFILE"
+}
+
+stop() {
+    sudo kill -15 "$(cat "$PIDFILE")" && rm -f "$PIDFILE"
+}
+
+case "$1" in 
+    start)
+       start
+       echo "manage_my_process started"
+       ;;
+    stop)
+       stop
+       echo "manage_my_process stopped"
+       ;;
+    restart)
+       stop
+       start
+       echo "manage_my_process restarted"
+       ;;
+    *)
+       echo "Usage: manage_my_process {start|stop|restart}"
+esac
+
+exit 0
