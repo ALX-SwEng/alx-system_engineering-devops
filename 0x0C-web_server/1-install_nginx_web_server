@@ -8,7 +8,6 @@
 ### to respect above requirements (this script will be run on the server itself)
 ## You can’t use systemctl for restarting nginx
 
-
 sudo apt-get update
 sudo apt-get install -y nginx
 sudo chown -R ubuntu /var/www
