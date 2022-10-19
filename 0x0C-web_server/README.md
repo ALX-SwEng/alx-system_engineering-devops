@@ -151,8 +151,8 @@ Quiz questions
 
 ### Question #6: A DNS A record translates to
 
-- [x] an IP
-- [] a domain
+- [x] an IP 
+- [] a domain 
 
 Question #7: A DNS CNAME record translates to
 
