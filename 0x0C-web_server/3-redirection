@@ -19,10 +19,8 @@ printf %s "server {
     listen		[::]:80 default_server;
 
     root		/var/www/html;
-    index		index.html index.htm index.nginx-debian.html;
 
-    HTTP/1.1 301 Moved Permanently
-    location: https://www.youtube.com/watch?v=TfgBHC5gvTI;
+    return 301 https://www.youtube.com/watch?v=TfgBHC5gvTI;
     }
 }
 " > /etc/nginx/sites-available/default
