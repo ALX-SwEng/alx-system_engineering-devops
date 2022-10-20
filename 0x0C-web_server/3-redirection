@@ -23,7 +23,6 @@ printf %s "server {
     location /redirect_me{
         rewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=TfgBHC5gvTI$1 permanent;
     }
-    
 }
 " > /etc/nginx/sites-available/default
 
