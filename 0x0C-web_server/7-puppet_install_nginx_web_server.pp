@@ -5,7 +5,7 @@ package { 'nginx':
 }
 
 file { 'index.nginx-debian.html':
-  path    => '/var/www/html/index.nginx-debian.html',
+  path    => '/var/www/html/index.html',
   content => 'Hello World!',
 }
 
