@@ -21,8 +21,10 @@ printf %s "server {
 
     root		/var/www/html;
     index		index.html index.htm index.nginx-debian.html;
-    rewrite     ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+    location    /redirect_me{
+    rewrite     https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
     }
 }
 " > /etc/nginx/sites-available/default
+
 service nginx restart
