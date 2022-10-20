@@ -22,8 +22,7 @@ printf %s "server {
     index		index.html index.htm index.nginx-debian.html;
 
     HTTP/1.1 301 Moved Permanently
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=TfgBHC5gvTI;
+    location: https://www.youtube.com/watch?v=TfgBHC5gvTI;
     }
 }
 " > /etc/nginx/sites-available/default
