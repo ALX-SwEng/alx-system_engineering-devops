@@ -14,8 +14,15 @@ sudo chown -R ubuntu /var/www
 
 touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
-sudo service nginx start
 
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+printf %s "server {
+    listen		80 default_server;
+    listen		[::]:80 default_server;
+
+    root		/var/www/html;
+    index		index.html index.htm index.nginx-debian.html;
+    rewrite     ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+    }
+}
+" > /etc/nginx/sites-available/default
 service nginx restart
-
