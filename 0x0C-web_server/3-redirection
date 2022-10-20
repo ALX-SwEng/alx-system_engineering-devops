@@ -8,8 +8,8 @@
 ### to respect above requirements (this script will be run on the server itself)
 ## You can’t use systemctl for restarting nginx
 
-apt-get -y update
-apt-get -y install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
 
 touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
