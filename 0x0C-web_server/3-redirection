@@ -8,13 +8,12 @@
 ### to respect above requirements (this script will be run on the server itself)
 ## You can’t use systemctl for restarting nginx
 
-ADD301_REDIRECT="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
-
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo chown -R ubuntu /var/www
+sudo ufw allow 'Nginx HTTP'
 
 touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
-sudo sed -i "30i $ADD301_REDIRECT" /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
