@@ -176,7 +176,7 @@ Your servers
 | Name | Username | IP | State |\
  |
 | --- | --- | --- | --- | --- |
-| 30516-web-01 | `ubuntu` | `44.201.70.150` | running |\
+| 30516-web-01 | `ubuntu` | `54.237.119.150` | running |\
  |
 
 |\
