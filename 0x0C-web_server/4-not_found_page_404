@@ -5,9 +5,6 @@ apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 
-echo 'Hello World!' > /var/www/html/index.html
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
 newlines="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
 sudo sed -i "27i $newlines" /etc/nginx/sites-available/default
