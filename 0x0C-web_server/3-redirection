@@ -13,5 +13,5 @@ apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo 'Hello World!' > /var/www/html/index.html
 
-sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;/" /etc/nginx/sites-available/default
+sed -i "listen 80;\ns/server_name _;/server_name _;\n\tlocation ^\/redirect_me {return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4};/" /etc/nginx/sites-available/default
 service nginx start
