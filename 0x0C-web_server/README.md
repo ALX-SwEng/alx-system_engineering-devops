@@ -62,6 +62,7 @@ Resources
 -   [HTTP redirection](https://alx-intranet.hbtn.io/rltoken/Eaa4ZuKvye941hTkP8VlBQ "HTTP redirection")
 -   [Not found HTTP response code](https://alx-intranet.hbtn.io/rltoken/eJSp2QFTY6jqqNtz8OVDEw "Not found HTTP response code")
 -   [Logs files on Linux](https://alx-intranet.hbtn.io/rltoken/7WMNY5CWD-CBrxmQrdmfPg "Logs files on Linux")
+-   [How to Install Bind DNS on Ubuntu 20.04 Server (Setup / Configure)](https://cloudinfrastructureservices.co.uk/how-to-install-bind-dns-on-ubuntu-20-04-server-setup-configure/)
 
 **For reference:**
 
