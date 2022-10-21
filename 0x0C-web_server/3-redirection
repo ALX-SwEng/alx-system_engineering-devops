@@ -8,24 +8,9 @@
 ### to respect above requirements (this script will be run on the server itself)
 ## You can’t use systemctl for restarting nginx
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-
-touch /var/www/html/index.html
-echo "Hello World!" > /var/www/html/index.html
-
-printf %s "server {
-    listen		80 default_server;
-    listen		[::]:80 default_server;
-
-    root		/var/www/html;
-    index		index.html index.htm index.nginx-debian.html;
-
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=TfgBHC5gvTI permanent;
-    }
-}
-" > /etc/nginx/sites-available/default
-
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo 'Holberton School' > /var/www/html/index.html
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 service nginx start
