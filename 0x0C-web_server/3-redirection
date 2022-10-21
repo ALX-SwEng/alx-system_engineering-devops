@@ -8,10 +8,13 @@
 ### to respect above requirements (this script will be run on the server itself)
 ## You can’t use systemctl for restarting nginx
 
-apt-get -y update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
-echo 'Hello World!' > /var/www/html/index.html
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo chown -R ubuntu /var/www
 
-sed -i "listen 80;\ns/server_name _;/server_name _;\n\tlocation ^\/redirect_me {return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4};/" /etc/nginx/sites-available/default
+touch /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
+sudo service nginx start
+
+sed -i "listen 80 default_server;\ns/server_name _;/server_name _;\n\tlocation ^\/redirect_me {return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4};/" /etc/nginx/sites-available/default
 service nginx start
