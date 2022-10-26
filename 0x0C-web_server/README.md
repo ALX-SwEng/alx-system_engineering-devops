@@ -62,7 +62,6 @@ Resources
 -   [HTTP redirection](https://alx-intranet.hbtn.io/rltoken/Eaa4ZuKvye941hTkP8VlBQ "HTTP redirection")
 -   [Not found HTTP response code](https://alx-intranet.hbtn.io/rltoken/eJSp2QFTY6jqqNtz8OVDEw "Not found HTTP response code")
 -   [Logs files on Linux](https://alx-intranet.hbtn.io/rltoken/7WMNY5CWD-CBrxmQrdmfPg "Logs files on Linux")
--   [How to Install Bind DNS on Ubuntu 20.04 Server (Setup / Configure)](https://cloudinfrastructureservices.co.uk/how-to-install-bind-dns-on-ubuntu-20-04-server-setup-configure/)
 
 **For reference:**
 
@@ -115,61 +114,8 @@ Requirements
 
 Quiz questions
 --------------
-### Question #0: The main role of a web server is to
 
-- [] serve dynamic content
-- [x] serve static content
-- [] host files
-
-### Question #1: A web server is
-
-- [] a physical machine
-- [x] a software
-
-### Question #2: The main role of DNS is to
-
-- [x] translate domain name into IP address
-- [] translate domain name into port
-- [] name websites
-
-### Question #3: What was one of the most important reason for which DNS was created
-
-- [x] because humans are not good at remembering long sequences of numbers (IP address)
-- [] to connect the Internet
-- [] to index the web
-
-### Question #4: A HTTP GET request is to
-
-- [x] request data
-- [] submit data
-- [] delete data
-
-### Question #5: A HTTP POST request is to
-
-- [] request data
-- [x] submit data
-- [] delete data
-
-### Question #6: A DNS A record translates to
-
-- [x] an IP 
-- [] a domain 
-
-Question #7: A DNS CNAME record translates to
-
-- [] an IP
-- [x] a domain
-
-### Question #8: What is TTL within the context of DNS
-- [x] a time period when DNS query results are cached
-- [] a time period when DNS is not answering requests
-- [] a time period for DNS maintenance
-
-### Question #9: Why web servers usually use child processes?
-
-- [] That’s just a subjective technical choice from the developers who created the software
-- [x] So that the web server can dynamically change the number of child process to accommodate the volume of requests to be processed
-- [] To prevent memory leak
+Show
 
 Your servers
 ------------
@@ -177,7 +123,7 @@ Your servers
 | Name | Username | IP | State |\
  |
 | --- | --- | --- | --- | --- |
-| 30516-web-01 | `ubuntu` | `54.237.119.150` | running |\
+| 1723-web-01 | `ubuntu` | `100.26.181.86` | running |\
  |
 
 |\

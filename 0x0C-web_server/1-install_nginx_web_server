@@ -8,10 +8,19 @@
 ### to respect above requirements (this script will be run on the server itself)
 ## You can’t use systemctl for restarting nginx
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo chown -R ubuntu /var/www
+apt-get -y update
+apt-get -y install nginx
 
 touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
-sudo service nginx start
+
+printf %s "server {
+    listen		80 default_server;
+    listen		[::]:80 default_server;
+
+    root		/var/www/html;
+    index		index.html index.htm index.nginx-debian.html;
+}
+" > /etc/nginx/sites-available/default
+
+service nginx restart

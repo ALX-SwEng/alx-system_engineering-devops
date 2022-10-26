@@ -1,14 +1,28 @@
 #!/usr/bin/env bash
 # 404 Not Found Page
 
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install nginx -y
-sudo service nginx start
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
-new_string='server_name _;\n\n\trewrite \^\/redirect_me https:\/\/www.youtube.com\/watch\?v=QH2-TGUlwu4 permanent;/'
-sudo sed -i "s/server_name _;\$/${new_string}" /etc/nginx/sites-available/default
-sudo sed -i "s/^\t\}$/\t\}\n\n\terror_page 404 \/404.html;/" /etc/nginx/sites-available/default
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-sudo service nginx restart
+apt-get update
+apt-get install -y nginx
+
+touch /var/www/html/index.html /var/www/html/404.html
+echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   root   /var/www/html/;
+    index  index.html index.htm;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=TfgBHC5gvTI;
+    }
+
+    error_page 404 /404.html;
+    location /404 {
+        root /var/www/html/;
+        internal;
+    }
+}" > /etc/nginx/sites-available/default
+
+service nginx restart
